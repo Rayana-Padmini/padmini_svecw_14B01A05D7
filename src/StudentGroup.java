@@ -311,6 +311,11 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student getNextStudent(Student student) {
 		// Add your implementation here
-		return null;
+		int i;
+		for (i = 0; i < students.length; i++) {
+			if (students[i].getId() == student.getId())
+				break;
+		}
+		return students[i+1];
 	}
 }
