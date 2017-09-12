@@ -261,7 +261,7 @@ public class StudentGroup implements StudentArrayOperation {
 		catch(IllegalArgumentException e) {
 			e.getStackTrace();
 		}
-		return null;
+		return arr;
 	}
 
 	@Override
@@ -291,7 +291,20 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudentsWithMaxAvgMark() {
 		// Add your implementation here
-		return null;
+		double max_avg = 0;
+		for (int i = 0; i < students.length; i++) {
+			if (max_avg < students[i].getAvgMark())
+				max_avg = students[i].getAvgMark();
+		}
+		Student[] arr = new Student[students.length];
+		int j = 0;
+		for (int i = 0; i < students.length; i++) {
+			if (students[i].getAvgMark() == max_avg) {
+				arr[j] = students[i];
+				j++;
+			}
+		}
+		return arr;
 	}
 
 	@Override
