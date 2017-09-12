@@ -115,12 +115,20 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
-		try {
+		/*try {
 			if (index < 0 || index >= students.length)
 				throw new IllegalArgumentException();
 			for (int i = index; i < students.length-1; i++) {
 				students[i] = students[i + 1];
 			}
+		}
+		catch(IllegalArgumentException e) {
+			e.getStackTrace();
+		}*/
+		try {
+			if (index < 0 || index >= students.length)
+				throw new IllegalArgumentException();
+			
 		}
 		catch(IllegalArgumentException e) {
 			e.getStackTrace();
@@ -238,6 +246,21 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getByBirthDate(Date date) {
 		// Add your implementation here
+		try {
+			if (date == null)
+				throw new IllegalArgumentException();
+			Student[] arr = new Student[students.length];
+			int j = 0;
+			for (int i = 0; i < students.length; i++) {
+				if (students[i].getBirthDate() == date) {
+					arr[j] = students[i];
+					j++;
+				}
+			}	
+		}
+		catch(IllegalArgumentException e) {
+			e.getStackTrace();
+		}
 		return null;
 	}
 
