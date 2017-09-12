@@ -256,12 +256,13 @@ public class StudentGroup implements StudentArrayOperation {
 					arr[j] = students[i];
 					j++;
 				}
-			}	
+			}
+			return arr;
 		}
 		catch(IllegalArgumentException e) {
 			e.getStackTrace();
 		}
-		return arr;
+		return null;
 	}
 
 	@Override
